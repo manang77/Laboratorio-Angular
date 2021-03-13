@@ -1,0 +1,18 @@
+<div class="user-mnaintenance-container">
+  <div class="users-edit-container">
+    <div class="edit-area">
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Add User">
+          <app-users-add (onAddUser)="addNewUser($event)"></app-users-add>
+        </mat-tab>
+        <mat-tab label="Edit">
+        <app-users-edit [currentUser]="currentUser"
+          (onUserChanged)="updateUser($event)"></app-users-edit>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <div class="users-list-container">
+    <app-users-list [userList]="userList" (onUserSelect)="editUser($event)" (onDeleteUser)="deleteUser($event)"></app-users-list>
+  </div>
+</div>

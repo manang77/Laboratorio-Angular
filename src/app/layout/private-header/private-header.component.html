@@ -1,0 +1,17 @@
+<div class="header-container">
+  <div>
+    <img src="./assets/logoHeader.png">
+  </div>
+  <div class="header-title-container">
+    <span class="header-title">Laboratorio de Angular: Private Header</span>
+  </div>
+  <div class="header-title-container">
+    <span class="header-user-message">Welcome {{ profileName }}</span>
+  </div>
+  <div class="logout-button-container">
+    <button mat-raised-button class="logout-button" color="primary" (click)="userLogout()">Logout</button>
+  </div>
+</div>
+<div>
+  <app-private-menu></app-private-menu>
+</div>

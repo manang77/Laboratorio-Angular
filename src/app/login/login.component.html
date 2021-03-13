@@ -1,0 +1,50 @@
+<div class="info-container">
+  <div>
+    <div>
+      <p class="info-text">Username: <strong>laboratorio</strong></p>
+    </div>
+    <div>
+      <p class="info-text">Password: <strong>angular</strong></p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <p class="info-text">Username2: <strong>laboratorio2</strong></p>
+    </div>
+    <div>
+      <p class="info-text">Password2: <strong>angular2</strong></p>
+    </div>
+  </div>
+
+</div>
+<div class="login-container">
+  <form #loginForm="ngForm">
+    <div class="login-input-container">
+      <div class="field-line">
+        <div>
+          <mat-form-field class="login-input">
+            <mat-label>Username</mat-label>
+            <input type="text" name="userId" [(ngModel)]="userProfile.userId" matInput required #id="ngModel">
+          </mat-form-field>
+        </div>
+        <div class="error-message" *ngIf="id.invalid && id.touched">User ID is mandatory</div>
+      </div>
+      <div class="field-line">
+        <div>
+          <mat-form-field class="login-input">
+            <mat-label>Password</mat-label>
+            <input type="password" name="password" [(ngModel)]="userProfile.password" matInput required #pass="ngModel">
+          </mat-form-field>
+        </div>
+        <div class="error-message" *ngIf="pass.invalid && pass.touched">Enter a valid password</div>
+      </div>
+      <button mat-raised-button class="login-button" color="primary" [disabled]="loginForm.invalid"
+        (click)="validateCredentials()">Login</button>
+    </div>
+  </form>
+</div>
+<div class="error-container" [hidden]="!loginAction && !userLogged">
+  <div>
+    <p class="error-text">Incorrect user or password</p>
+  </div>
+</div>

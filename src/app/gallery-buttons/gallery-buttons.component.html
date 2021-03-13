@@ -1,0 +1,32 @@
+<div class="buttons-container">
+  <div>
+    <button mat-fab color="primary" [disabled]="galleryStatus.firstImageSelected" (click)="onButtonClick(galleryClicks.PREVIOUS_CLICK)">
+      <mat-icon>arrow_left</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-fab color="primary" [disabled]="galleryStatus.lastImageSelected" (click)="onButtonClick(galleryClicks.NEXT_CLICK)">
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-fab color="primary" (click)="onButtonClick(galleryClicks.ZOOM_IN_CLICK)">
+      <mat-icon>zoom_in</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-fab color="primary" (click)="onButtonClick(galleryClicks.ZOOM_OUT_CLICK)">
+      <mat-icon>zoom_out</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!galleryStatus.playActivated" >
+    <button mat-fab color="primary" (click)="onButtonClick(galleryClicks.PLAY_CLICK)">
+      <mat-icon>play_circle_outline</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="galleryStatus.playActivated">
+    <button mat-fab color="primary" (click)="onButtonClick(galleryClicks.STOP_CLICK)">
+      <mat-icon>pause_circle_outline</mat-icon>
+    </button>
+  </div>
+</div>

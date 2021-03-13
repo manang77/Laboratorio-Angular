@@ -1,0 +1,44 @@
+<div class="gallery-container">
+  <div class="selected-image-container">
+    <img src="{{ imagesList[galleryStatus.selectedImageIndex].src }} " [width]="galleryStatus.selectedImageWidth">
+  </div>
+  <div class="carrusel-container">
+    <div class="images-carrousel-container">
+      <div>
+        <button mat-button color="basic" [disabled]="galleryStatus.firstCarrouselPage"
+          (click)="onCarruselButtonClick(galleryClicks.PREVIOUS_PAGE_CLICK)">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+      </div>
+      <div
+        *ngFor="let image of imagesList | slice:galleryStatus.firstImageCarrousel : galleryStatus.firstImageCarrousel + 3 ">
+        <div [ngSwitch]="image.id">
+          <div *ngSwitchCase="galleryStatus.selectedImageIndex">
+            <div class="image" *ngIf="image.id === galleryStatus.selectedImageIndex" appItemHighlight>
+              <img src="{{ image.src }}" width="120" (click)="onCarruselImageClick(image.id)" />
+            </div>
+          </div>
+          <div *ngSwitchDefault>
+            <div class="image" *ngIf="image.id !== galleryStatus.selectedImageIndex">
+              <img src="{{ image.src }}" width="120" (click)="onCarruselImageClick(image.id)" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="page-button" mat-button color="basic" [disabled]="galleryStatus.lastCarrouselPage"
+          (click)="onCarruselButtonClick(galleryClicks.NEXT_PAGE_CLICK)">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-buttons-container">
+    <app-gallery-buttons [galleryStatus]="galleryStatus" (galleryButtonClick)="galleryButtonClick($event)">
+    </app-gallery-buttons>
+  </div>
+</div>
+
+<!-- <div *ngFor="let image of imagesList | slice: inicioCarrusel : inicioCarrusel + 3">
+  <img src="{{ image.src }}" />
+</div> -->

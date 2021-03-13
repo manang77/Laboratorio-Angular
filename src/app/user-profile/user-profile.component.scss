@@ -1,0 +1,33 @@
+.user-profile-container {
+  margin-left: 40rem;
+  margin-top: 0rem;
+  width: 40%;
+  height: 20rem;
+}
+
+.user-profile-input-container {
+  padding: 5rem;
+}
+
+.user-profile-field-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-profile-input {
+  width: 20rem;
+  font-size: 20px;
+  color: mediumslateblue;
+}
+
+.login-button {
+  width: 8rem;
+}
+
+.new-profile-error-message {
+  color: red;
+  font-size: 14px;
+  padding-left: 0.5rem;
+}

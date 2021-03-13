@@ -1,0 +1,31 @@
+.header-container {
+  padding: 2rem;
+  width: auto;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:antiquewhite;
+}
+
+.header-title-container {
+  margin-left: 4rem;
+  margin-top: 1.6rem;
+}
+
+.header-title {
+  font-size: 3rem;
+  color: darkmagenta;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header-user-message {
+  color: darkslateblue;
+  font-size: 1.5rem;
+}
+
+.logout-button-container {
+  padding-top: 1.5rem;
+  padding-right: 3rem;
+}

@@ -1,0 +1,34 @@
+.menu-line-container {
+  height: 100%;
+}
+
+.menu-display {
+  list-style-type: none;
+  margin: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.menu-display :hover {
+  background-color: mediumslateblue;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-item {
+  text-align: center;
+  padding-top: 1rem;
+  width: 7rem;
+}
+
+.menu-item a {
+  color:white;
+  text-decoration: none;
+}
+
+.selected {
+  background-color: mediumslateblue;
+  border: none;
+}

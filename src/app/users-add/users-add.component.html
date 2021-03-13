@@ -1,0 +1,29 @@
+<div>
+  <form #addUser="ngForm">
+    <div class="add-input-container">
+      <div class="add-input-field">
+        <mat-form-field class="login-input">
+          <mat-label>Full Name</mat-label>
+          <input type="text" name="name" [(ngModel)]="newUser.name" matInput required #name="ngModel" />
+        </mat-form-field>
+        <div class="add-error-message" *ngIf="name.invalid && name.touched">Full Name is mandatory</div>
+      </div>
+      <div class="add-input-field">
+        <mat-form-field class="login-input">
+          <mat-label>Email Address</mat-label>
+          <input type="text" name="email" [(ngModel)]="newUser.email" matInput required #email="ngModel" />
+        </mat-form-field>
+        <div class="add-error-message" *ngIf="email.invalid && email.touched">Email address is mandatory</div>
+      </div>
+      <div class="add-input-field">
+        <mat-form-field class="login-input">
+          <mat-label>Phone Number</mat-label>
+          <input type="text" name="phoneNumber" [(ngModel)]="newUser.phoneNumber" matInput required #phone="ngModel" />
+        </mat-form-field>
+        <div class="add-error-message" *ngIf="phone.invalid && phone.touched">Phone Number is mandatory</div>
+      </div>
+    </div>
+    <button mat-raised-button class="add-button" color="primary" [disabled]="addUser.invalid"
+      (click)="addNewUser()">Add User</button>
+  </form>
+</div>

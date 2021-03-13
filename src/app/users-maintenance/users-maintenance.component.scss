@@ -1,0 +1,23 @@
+.user-mnaintenance-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  align-items: center;
+  width: 100%;
+}
+
+.users-list-container {
+  padding-top: 2rem;
+}
+
+.users-edit-container {
+  border: 1px solid darkgray;
+  width: 44%;
+  height: 240px;
+  margin-top: 2rem;
+  box-shadow: 3px 10px 10px lightgrey;
+}
+
+.edit-area {
+  margin: 1rem;
+}

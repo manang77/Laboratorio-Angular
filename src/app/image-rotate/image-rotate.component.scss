@@ -1,0 +1,31 @@
+.rotate-image-container {
+  background-color: black;
+  height: 48rem;
+}
+
+.image-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  height: 6rem;
+  color: white;
+  font-size: 30px;
+  padding-top: 2rem;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  cursor: pointer;
+}
+
+.rotate-item {
+   text-align: center;
+  width: 33%;
+}

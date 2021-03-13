@@ -1,0 +1,16 @@
+.edit-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.edit-input-field {
+  min-width: 33%;
+}
+
+.edit-input {
+  width: 90%;
+  font-size: 15px;
+  color: mediumslateblue;
+}

@@ -1,0 +1,16 @@
+<div class="user-profile-container ">
+  <form>
+    <div class="user-profile-input-container">
+      <div class="user-profile-field-line">
+        <div>
+          <mat-form-field class="user-profile-input">
+            <mat-label>New profile name</mat-label>
+            <input type="text" name="userId" [(ngModel)]="userProfile" matInput required #id="ngModel">
+          </mat-form-field>
+        </div>
+        <div class="new-profile-error-message" *ngIf="id.invalid && id.touched">New profile name is mandatory</div>
+      </div>
+      <button mat-raised-button class="login-button" color="primary" (click)="updateProfile()">Update Profile</button>
+    </div>
+  </form>
+</div>

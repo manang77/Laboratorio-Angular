@@ -1,0 +1,22 @@
+<div>
+  <div class="edit-input-container">
+    <div class="edit-input-field">
+        <mat-form-field class="edit-input">
+          <mat-label>Full Name</mat-label>
+          <input type="text" name="name" [(ngModel)]="currentUser.name" matInput (keyup)="updateSelectedUser()" />
+        </mat-form-field>
+    </div>
+    <div class="edit-input-field">
+        <mat-form-field class="edit-input">
+          <mat-label>Email Address</mat-label>
+          <input type="text" name="email" [(ngModel)]="currentUser.email" matInput (keyup)="updateSelectedUser()">
+        </mat-form-field>
+    </div>
+    <div class="edit-input-field">
+        <mat-form-field class="edit-input">
+          <mat-label>Phone Number</mat-label>
+          <input type="text" name="phoneNumber" [(ngModel)]="currentUser.phoneNumber" matInput (keyup)="updateSelectedUser()">
+        </mat-form-field>
+    </div>
+  </div>
+</div>
