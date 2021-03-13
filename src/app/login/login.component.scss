@@ -2,7 +2,7 @@
   margin-left: 40rem;
   margin-top: 0rem;
   width: 40%;
-  height: 20rem;
+  height: 27.5rem;
 }
 .info-container {
   width: 26%;
@@ -16,6 +16,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.loading-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .info-text {

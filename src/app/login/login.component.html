@@ -15,9 +15,13 @@
       <p class="info-text">Password2: <strong>angular2</strong></p>
     </div>
   </div>
-
 </div>
-<div class="login-container">
+<div  class="loading-container">
+  <div [hidden]="!loginProcess">
+    <img src="../../assets/loading.gif.crdownload" />
+  </div>
+</div>
+<div [hidden]="loginProcess" class="login-container">
   <form #loginForm="ngForm">
     <div class="login-input-container">
       <div class="field-line">

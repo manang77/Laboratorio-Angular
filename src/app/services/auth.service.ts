@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Credential, newCredential } from '../model/credential'
 
 @Injectable({
@@ -10,7 +12,7 @@ export class AuthService {
 
   constructor() { }
 
-  login(user: Credential): boolean {
+  login(user: Credential): Observable<boolean> {
     this.userLogged = (user.userId === 'laboratorio' && user.password === 'angular')
     ||
     (user.userId === 'laboratorio2' && user.password === 'angular2')
@@ -22,7 +24,7 @@ export class AuthService {
       const profileName: string = this.setProfileNameInLocalStorage(user.userId);
       this.userCredential = { ...user, profileName: profileName};
     }
-    return this.userLogged;
+    return of(this.userLogged).pipe(delay(3000));
   }
 
   logout() {
