@@ -1,8 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Credential, newCredential } from '../model/credential';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Subscriber } from 'rxjs';
+import { } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +21,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   validateCredentials() {
     this.loginProcess = true;
+
     this.authService.login(this.userProfile).subscribe(loginResult => {
-      this.userLogged = loginResult;
       this.loginProcess = false;
       this.loginAction = true;
-      if (this.userLogged) {
+      this.authService.setLogged(loginResult)
+      if (this.authService.isLogged()) {
         this.router.navigate(['/dashboard']);
       }
     });

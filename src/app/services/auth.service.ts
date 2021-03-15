@@ -13,18 +13,18 @@ export class AuthService {
   constructor() { }
 
   login(user: Credential): Observable<boolean> {
-    this.userLogged = (user.userId === 'laboratorio' && user.password === 'angular')
+    const login = (user.userId === 'laboratorio' && user.password === 'angular')
     ||
     (user.userId === 'laboratorio2' && user.password === 'angular2')
     ?
     true
     :
     false;
-    if (this.isLogged()) {
+    if (login) {
       const profileName: string = this.setProfileNameInLocalStorage(user.userId);
       this.userCredential = { ...user, profileName: profileName};
     }
-    return of(this.userLogged).pipe(delay(3000));
+    return of(login).pipe(delay(3000));
   }
 
   logout() {
@@ -48,6 +48,10 @@ export class AuthService {
       localStorage.setItem(`profileName-${loggedUserId}`, loggedUserId);
       return loggedUserId;
     }
+  }
+
+  setLogged(status: boolean) {
+    this.userLogged = status;
   }
 
   setNewProfileName(newProfileName: string) {
